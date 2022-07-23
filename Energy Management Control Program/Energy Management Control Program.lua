@@ -1,4 +1,3 @@
------------ Made BY MJRLegends (Please dont claim as your own code) -----------
 version = "1.5.2"
 
 --------------------------------------------------------------
@@ -70,10 +69,10 @@ for i,v in ipairs(periList) do
             monitorCount = monitorCount + 1
             connectedMonitors[monitorCount] = periList[i]
         end,
-        ["BigReactors%-Turbine"] = function()
+        ["BiggerReactors_Turbine"] = function()
             turbine = peripheral.wrap(periList[i])
         end,
-        ["BigReactors%-Reactor"] = function()
+        ["BiggerReactors_Reactor"] = function()
             reactor = peripheral.wrap(periList[i])
         end,
 		["mekanism_machine"] = function()
