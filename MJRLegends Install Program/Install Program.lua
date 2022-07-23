@@ -1,22 +1,13 @@
------------ Made BY MJRLegends (Please dont claim as your own code) -----------
-version = "2.0.1"
+version = "1.0.1"
 
 --Main Programs
-reactorProgram = "CJMFJUEb"
-reactorProgramSmartHelmet = "GyZmQB4B"
-tubineProgram = "jynMAHYQ"
-tubineProgramSmartHelmet = "MYk7Nz45"
-fusionreactorProgram = "pk8B7fAM"
-newFusionreactorProgram = "5nCJ4QZb"
+reactorProgram = "ry3JaxKM"
+tubineProgram = "yXNyVhG1"
+newFusionreactorProgram = "FiSZeFsC"
 energyProgram = "RYN6uUf7"
 thermalEvaporationProgram = "9txmi9Q4"
-railcraftTanksProgram = "cN7scp9W"
 
---Other Programs
-reactorSimpleProgram = "ktBqnfmn"
-tubineSimpleProgram = "LWJ9SYw3"
-
-latestVerions = "wL3rVUqN"
+latestVerions = "fYgwe5qt"
 selection = 0
 menu = "mainmenu"
 
@@ -43,48 +34,6 @@ function addToCurrentVersions()
 	file.close()
 end
 
---Other Programs Menu
-function otherPrograms()
-	selection = 0
-	term.clear()
-	term.setBackgroundColor(colors.black)
-	term.setTextColor(colors.blue)
-	term.setCursorPos(1,1)
-	term.write("MJRLegends Other Programs!")
-	term.setTextColor(colors.cyan)
-	print("")
-	print("Enter a number for the program you want to install:")
-	term.setTextColor(colors.white)
-	print("1 - Simple Display Reactor Info (Monitor Edition)")
-	print("2 - Simple Display Turbine Info (Monitor Edition)")
-	term.setTextColor(colors.blue)
-	print("3 - Back to Main Menu")
-	term.setTextColor(colors.cyan)
-	
-	selection = read()
-	--Choice depending on what the user types
-	if selection == "1" then
-		if fs.exists("startup") then
-			fs.delete("startup")
-		end
-		shell.run("pastebin get " .. reactorSimpleProgram .. " startup")
-		print("Installed!")
-		print("Restart the computer using (Ctrl + R)!")
-	elseif selection == "2" then
-		if fs.exists("startup") then
-			fs.delete("startup")
-		end
-		shell.run("pastebin get " .. tubineSimpleProgram .. " startup")
-		print("Installed!")
-		print("Restart the computer using (Ctrl + R)!")
-	elseif selection == "3" then
-		selection = 0
-		mainMenu()
-	else
-		print("Unknown Program!")
-	end
-end
-
 function mainMenu()
 	if selection == 0 then
 		-- Main Menu
@@ -92,24 +41,18 @@ function mainMenu()
 		term.setBackgroundColor(colors.black)
 		term.setTextColor(colors.blue)
 		term.setCursorPos(1,1)
-		term.write("Welcome to MJRLegends Install Program! V" .. version)
+		term.write("Welcome to the Install Program! V" .. version)
 		term.setTextColor(colors.cyan)
 		term.setCursorPos(1,2)
 		print("Enter a number for the program you want to install:")
 		term.setTextColor(colors.white)
 		print("1 - Reactor Management(BR/Monitor Edition)")
-		print("2 - Reactor Management(BR/Smart Helmet Edition)")
-		print("3 - Turbine Management(BR/Monitor Edition)")
-		print("4 - Turbine Management(BR/Smart Helmet Edition)")
-		print("5 - Fusion Reactor Management(Mekanism 8)")
-		print("6 - Fusion Reactor Management(Mekanism 9+)")
-		print("7 - Energy Management")
-		print("8 - Thermal Evaporation Display (Mekanism 9+)")
-		print("9 - RailCraft Tanks Display")
+		print("2 - Turbine Management(BR/Monitor Edition)")
+		print("3 - Fusion Reactor Management(Mekanism 9+)")
+		print("4 - Energy Management")
+		print("5 - Thermal Evaporation Display (Mekanism 9+)")
 		term.setTextColor(colors.yellow)
-		print("10 - Versions")
-		term.setTextColor(colors.lime)
-		print("11 - Other Programs")
+		print("6 - Versions")
 		term.setTextColor(colors.cyan)
 
 		selection = read()
@@ -129,7 +72,7 @@ function mainMenu()
 		if fs.exists("startup") then
 			fs.delete("startup")
 		end
-		shell.run("pastebin get " .. reactorProgramSmartHelmet .. " startup")
+		shell.run("pastebin get " .. tubineProgram .. " startup")
 		print("Installed!")
 		print("Restart the computer using (Ctrl + R)!")
 		addToCurrentVersions()
@@ -138,7 +81,7 @@ function mainMenu()
 		if fs.exists("startup") then
 			fs.delete("startup")
 		end
-		shell.run("pastebin get " .. tubineProgram .. " startup")
+		shell.run("pastebin get " .. newFusionreactorProgram .. " startup")
 		print("Installed!")
 		print("Restart the computer using (Ctrl + R)!")
 		addToCurrentVersions()
@@ -147,7 +90,7 @@ function mainMenu()
 		if fs.exists("startup") then
 			fs.delete("startup")
 		end
-		shell.run("pastebin get " .. tubineProgramSmartHelmet .. " startup")
+		shell.run("pastebin get " .. energyProgram .. " startup")
 		print("Installed!")
 		print("Restart the computer using (Ctrl + R)!")
 		addToCurrentVersions()
@@ -156,48 +99,12 @@ function mainMenu()
 		if fs.exists("startup") then
 			fs.delete("startup")
 		end
-		shell.run("pastebin get " .. fusionreactorProgram .. " startup")
-		print("Installed!")
-		print("Restart the computer using (Ctrl + R)!")
-		addToCurrentVersions()
-		return
-	elseif selection == "6" then
-		if fs.exists("startup") then
-			fs.delete("startup")
-		end
-		shell.run("pastebin get " .. newFusionreactorProgram .. " startup")
-		print("Installed!")
-		print("Restart the computer using (Ctrl + R)!")
-		addToCurrentVersions()
-		return
-	elseif selection == "7" then
-		if fs.exists("startup") then
-			fs.delete("startup")
-		end
-		shell.run("pastebin get " .. energyProgram .. " startup")
-		print("Installed!")
-		print("Restart the computer using (Ctrl + R)!")
-		addToCurrentVersions()
-		return
-	elseif selection == "8" then
-		if fs.exists("startup") then
-			fs.delete("startup")
-		end
 		shell.run("pastebin get " .. thermalEvaporationProgram .. " startup")
 		print("Installed!")
 		print("Restart the computer using (Ctrl + R)!")
 		addToCurrentVersions()
 		return
-	elseif selection == "9" then
-		if fs.exists("startup") then
-			fs.delete("startup")
-		end
-		shell.run("pastebin get " .. railcraftTanksProgram .. " startup")
-		print("Installed!")
-		print("Restart the computer using (Ctrl + R)!")
-		addToCurrentVersions()
-		return
-	elseif selection == "10" then
+	elseif selection == "6" then
 		if fs.exists("versions.txt") then
 			fs.delete("versions.txt")
 		end
@@ -261,8 +168,6 @@ function mainMenu()
 			selection = 0
 			mainMenu()
 		end
-	elseif selection == "11" then
-		otherPrograms()
 	else
 		print("Unknown Program!")
 	end
